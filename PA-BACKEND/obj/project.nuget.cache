@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Tjy3vT7l32c=",
+  "dgSpecHash": "2tLSGA+7gHc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND\\PA-BACKEND.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jesus\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
-    "C:\\Users\\Jesus\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
     "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

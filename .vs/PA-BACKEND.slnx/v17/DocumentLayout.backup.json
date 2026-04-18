@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{30B49F68-E911-4114-BE28-E457D7E14384}|PA-BACKEND\\PA-BACKEND.csproj|c:\\users\\jesus\\onedrive\\desktop\\aplicaciones para los logs\\back\\pa-backend\\pa-backend\\pa-backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{30B49F68-E911-4114-BE28-E457D7E14384}|PA-BACKEND\\PA-BACKEND.csproj|solutionrelative:pa-backend\\pa-backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PA-BACKEND",
+              "DocumentMoniker": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND\\PA-BACKEND.csproj",
+              "RelativeDocumentMoniker": "PA-BACKEND\\PA-BACKEND.csproj",
+              "ToolTip": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND\\PA-BACKEND.csproj",
+              "RelativeToolTip": "PA-BACKEND\\PA-BACKEND.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-18T03:55:32.727Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
