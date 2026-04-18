@@ -40,37 +40,45 @@ namespace PA_BACKEND.Data.Repositories
         #region insertar log de auditoría
         public async Task<ResponseAuditLogDTO> InsertAuditLogAsync(InsertAuditLogDTO auditLogDto)
         {
-            _logger.LogInformation("AUDIT_LOG: Iniciando inserción de log de auditoría");
+            _logger.LogWarning("AUDIT_LOG_START: Iniciando inserción de log de auditoría");
+            Console.WriteLine("AUDIT_LOG_START: Iniciando inserción de log de auditoría");
             
             if (auditLogDto == null)
             {
-                _logger.LogError("AUDIT_LOG: auditLogDto es null");
+                _logger.LogError("AUDIT_LOG_ERROR: auditLogDto es null");
+                Console.WriteLine("AUDIT_LOG_ERROR: auditLogDto es null");
                 throw new ArgumentNullException(nameof(auditLogDto));
             }
 
             if (string.IsNullOrWhiteSpace(auditLogDto.Action))
             {
-                _logger.LogError("AUDIT_LOG: Action es requerido y está vacío");
+                _logger.LogError("AUDIT_LOG_ERROR: Action es requerido y está vacío");
+                Console.WriteLine("AUDIT_LOG_ERROR: Action es requerido y está vacío");
                 throw new ArgumentException("Acción requerida");
             }
 
-            _logger.LogInformation("AUDIT_LOG: Datos del log - UserId: {UserId}, Action: {Action}, EntityType: {EntityType}, EntityId: {EntityId}, IpAddress: {IpAddress}", 
+            _logger.LogWarning("AUDIT_LOG_DATA: UserId: {UserId}, Action: {Action}, EntityType: {EntityType}, EntityId: {EntityId}, IpAddress: {IpAddress}", 
                 auditLogDto.UserId, auditLogDto.Action, auditLogDto.EntityType, auditLogDto.EntityId, auditLogDto.IpAddress);
+            Console.WriteLine($"AUDIT_LOG_DATA: UserId={auditLogDto.UserId}, Action={auditLogDto.Action}, EntityType={auditLogDto.EntityType}, EntityId={auditLogDto.EntityId}, IpAddress={auditLogDto.IpAddress}");
 
             try
             {
+                Console.WriteLine("AUDIT_LOG_CONN: Obteniendo conexión a base de datos");
                 _logger.LogInformation("AUDIT_LOG: Obteniendo conexión a base de datos");
                 using var connection = GetConnection();
                 
                 var connectionString = _configuration.GetConnection().ConnectionString;
+                Console.WriteLine($"AUDIT_LOG_CONN_STR: {connectionString.Substring(0, Math.Min(50, connectionString.Length))}...");
                 _logger.LogInformation("AUDIT_LOG: ConnectionString (parcial): {ConnectionString}", 
                     connectionString.Substring(0, Math.Min(50, connectionString.Length)) + "...");
                 
                 await connection.OpenAsync();
+                Console.WriteLine("AUDIT_LOG_CONN_OPEN: Conexión a BD abierta exitosamente");
                 _logger.LogInformation("AUDIT_LOG: Conexión a BD abierta exitosamente");
 
                 // la función retorna un tipo compuesto audit_logs
                 // leemos como dynamic y mapeamos manualmente para manejar el tipo inet
+                Console.WriteLine("AUDIT_LOG_EXEC: Ejecutando función insert_audit_log");
                 _logger.LogInformation("AUDIT_LOG: Ejecutando función insert_audit_log");
                 var row = await connection.QuerySingleAsync<dynamic>(
                     "SELECT * FROM insert_audit_log(@p_user_id, @p_action, @p_entity_type, @p_entity_id, @p_ip_address::inet)",
@@ -84,6 +92,7 @@ namespace PA_BACKEND.Data.Repositories
                     }
                 );
 
+                Console.WriteLine("AUDIT_LOG_SUCCESS: Función ejecutada exitosamente, mapeando resultado");
                 _logger.LogInformation("AUDIT_LOG: Función ejecutada exitosamente, mapeando resultado");
                 
                 // mapear manualmente el resultado
@@ -98,17 +107,20 @@ namespace PA_BACKEND.Data.Repositories
                     CreatedAt = (DateTime)row.created_at
                 };
 
+                Console.WriteLine($"AUDIT_LOG_COMPLETE: Log de auditoría insertado exitosamente - Id: {result.Id}");
                 _logger.LogInformation("AUDIT_LOG: Log de auditoría insertado exitosamente - Id: {Id}", result.Id);
                 return result;
             }
             catch (PostgresException ex)
             {
+                Console.WriteLine($"AUDIT_LOG_PG_ERROR: {ex.SqlState} - {ex.Message}");
                 _logger.LogError(ex, "AUDIT_LOG: Error de PostgreSQL al insertar log - SQLState: {SQLState}, Message: {Message}", 
                     ex.SqlState, ex.Message);
                 return null!;
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"AUDIT_LOG_GEN_ERROR: {ex.Message}");
                 _logger.LogError(ex, "AUDIT_LOG: Error general al insertar log de auditoría");
                 return null!;
             }
