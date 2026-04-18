@@ -47,7 +47,13 @@ namespace PA_BACKEND.Data.Repositories
             if (context == null) return "unknown";
             
             var ip = context.Request.Headers["X-Forwarded-For"].FirstOrDefault();
-            if (string.IsNullOrEmpty(ip))
+            if (!string.IsNullOrEmpty(ip))
+            {
+                // X-Forwarded-For puede contener múltiples IPs separadas por comas
+                // La primera IP es la del cliente original
+                ip = ip.Split(',')[0].Trim();
+            }
+            else
             {
                 ip = context.Connection.RemoteIpAddress?.ToString();
             }
