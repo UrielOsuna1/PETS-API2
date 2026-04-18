@@ -16,7 +16,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=neondb;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;",
+        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=pa;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;",
         "ALLOWED_ORIGIN": "http://localhost:5163"
       }
     },
@@ -27,7 +27,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "http://localhost:5163",
-        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=neondb;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;"
+        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=pa;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;"
       },
       "distributionName": ""
     }       
