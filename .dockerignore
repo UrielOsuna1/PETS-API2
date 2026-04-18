@@ -6,3 +6,4 @@ obj
 Dockerfile 
 NuGet.Config 
 **/NuGet.Config 
+**/NuGet.Config 
