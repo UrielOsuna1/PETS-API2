@@ -11,29 +11,26 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
     });
 
-// cors
+/* =========================
+   CORS FIX (CORREGIDO)
+========================= */
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        var isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
-        if (isDevelopment)
-        {
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        }
-        else
-        {
-            policy.WithOrigins("https://tudominio.com")
-                  .AllowAnyMethod()
-                  .AllowAnyHeader()
-                  .AllowCredentials();
-        }
+        policy
+            .WithOrigins(
+                "https://pets-front2-production.up.railway.app",
+                "http://localhost:4200"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     });
 });
 
-// manejo de errores de modelo
+/* =========================
+   MODEL VALIDATION
+========================= */
 builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = context =>
@@ -55,12 +52,13 @@ builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options 
     };
 });
 
-// 🔥 FIX: evitar crash si no hay variables en build
+/* =========================
+   JWT SAFE INIT
+========================= */
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "TEMP_KEY_123456789";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "TEMP_ISSUER";
 var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "TEMP_AUDIENCE";
 
-// auth
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
@@ -81,7 +79,9 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization();
 
-// DI
+/* =========================
+   DEPENDENCY INJECTION
+========================= */
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IAuthRepository, PA_BACKEND.Data.Repositories.AuthRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.ITokenRepository, PA_BACKEND.Data.Repositories.TokenRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.ICryptoRepository, PA_BACKEND.Data.Repositories.CryptoRepository>();
@@ -90,23 +90,29 @@ builder.Services.AddScoped<PA_BACKEND.Data.Interface.IAuditLogRepository, PA_BAC
 
 builder.Services.AddHttpContextAccessor();
 
-// db
 builder.Services.AddSingleton<PA_BACKEND.Data.PostgreSQLConfiguration>();
 builder.Services.AddSingleton<Microsoft.Extensions.Configuration.IConfiguration>(builder.Configuration);
 
-// swagger
+/* =========================
+   SWAGGER
+========================= */
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+/* =========================
+   DEV TOOLS
+========================= */
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// errores globales
+/* =========================
+   GLOBAL ERROR HANDLER
+========================= */
 app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>
@@ -126,7 +132,12 @@ app.UseExceptionHandler(errorApp =>
     });
 });
 
-app.UseCors("AllowAll");
+/* =========================
+   PIPELINE (FIX IMPORTANTE)
+========================= */
+app.UseRouting();
+
+app.UseCors("AllowAll"); // 🔥 FIX REAL CORS
 
 app.UseAuthorizationHeaderFix();
 app.UseTokenBlacklistValidation();
@@ -136,6 +147,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// 🔥 Railway
+/* =========================
+   RAILWAY PORT
+========================= */
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Run($"http://0.0.0.0:{port}");
