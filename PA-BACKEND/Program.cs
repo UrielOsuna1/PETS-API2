@@ -4,8 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // add services to the container
 
-// forzar carga de variables de entorno del launchSettings.json
-var launchSettings = builder.Configuration.AddJsonFile("Properties/launchSettings.json", optional: true, reloadOnChange: true);
+// cargar variables de entorno
 builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddControllers()
@@ -69,12 +68,16 @@ builder.Services.AddAuthentication("Bearer")
             ValidateIssuer = true,
             ValidateIssuerSigningKey = true,
             ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero, // sin skew para mayor seguridad
+            ClockSkew = TimeSpan.Zero,
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError))),
-            ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
-            ValidAudience = builder.Configuration["Jwt:Audience"] ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
-            // mapear el claim de rol para que [Authorize(Roles = "X")] funcione
+                System.Text.Encoding.UTF8.GetBytes(
+                    builder.Configuration["Jwt:Key"]
+                    ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError)
+                )),
+            ValidIssuer = builder.Configuration["Jwt:Issuer"]
+                ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
+            ValidAudience = builder.Configuration["Jwt:Audience"]
+                ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
             RoleClaimType = System.Security.Claims.ClaimTypes.Role
         };
     });
@@ -88,24 +91,24 @@ builder.Services.AddScoped<PA_BACKEND.Data.Interface.ICryptoRepository, PA_BACKE
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IGatewayRepository, PA_BACKEND.Data.Repositories.GatewayRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IAuditLogRepository, PA_BACKEND.Data.Repositories.AuditLogRepository>();
 
-// http context accessor para obtener ip del cliente
+// http context accessor
 builder.Services.AddHttpContextAccessor();
 
 // database configuration
 builder.Services.AddSingleton<PA_BACKEND.Data.PostgreSQLConfiguration>();
 builder.Services.AddSingleton<Microsoft.Extensions.Configuration.IConfiguration>(builder.Configuration);
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { 
-        Title = "PA Backend API", 
+    c.SwaggerDoc("v1", new()
+    {
+        Title = "PA Backend API",
         Version = "v1",
         Description = "API para el sistema de protección animal"
     });
-    
-    // configuración para jwt bearer
+
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -114,7 +117,7 @@ builder.Services.AddSwaggerGen(c =>
         Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-    
+
     c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
     {
         {
@@ -133,7 +136,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// configure the HTTP request pipeline.
+// swagger solo en desarrollo
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -144,14 +147,14 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// middleware global para manejo de excepciones
+// middleware global de errores
 app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>
     {
         context.Response.StatusCode = 500;
         context.Response.ContentType = "application/json";
-        
+
         var response = new PA_BACKEND.DTOs.Common.ResponseAPIDTO<object>
         {
             Success = false,
@@ -167,17 +170,15 @@ app.UseExceptionHandler(errorApp =>
 // use CORS
 app.UseCors("AllowAll");
 
-// fix authorization headers (agrega Bearer si falta)
+// middlewares personalizados
 app.UseAuthorizationHeaderFix();
-
-// validate token blacklist (revoked tokens)
 app.UseTokenBlacklistValidation();
-
-// app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+// 🔥 IMPORTANTE PARA RAILWAY
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Run($"http://0.0.0.0:{port}");
