@@ -1,0 +1,6 @@
+@PA_BACKEND_HostAddress = http://localhost:5265
+
+GET {{PA_BACKEND_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

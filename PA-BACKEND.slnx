@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PA-BACKEND.Data/PA-BACKEND.Data.csproj" />
+  <Project Path="PA-BACKEND.DTOs/PA-BACKEND.DTOs.csproj" />
+  <Project Path="PA-BACKEND.Model/PA-BACKEND.Model.csproj" />
+  <Project Path="PA-BACKEND/PA-BACKEND.csproj" />
+</Solution>

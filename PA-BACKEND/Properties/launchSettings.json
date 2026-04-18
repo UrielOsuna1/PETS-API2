@@ -1,0 +1,43 @@
+﻿{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=pa;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5163"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=neondb;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;",
+        "ALLOWED_ORIGIN": "http://localhost:5163"
+      }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5163/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5163",
+        "CONNECTION_STRING": "Server=ep-dawn-poetry-aiqbs5p0-pooler.c-4.us-east-1.aws.neon.tech;Port=5432;Database=neondb;User Id=neondb_owner;Password=npg_qj3YvurXe6LQ;Ssl Mode=Require;"
+      },
+      "distributionName": ""
+    }       
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:50790/",
+      "sslPort": 44390
+    }
+  }
+}

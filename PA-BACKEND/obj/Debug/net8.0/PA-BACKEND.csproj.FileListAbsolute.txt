@@ -1,0 +1,122 @@
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\appsettings.json
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.staticwebassets.endpoints.json
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.exe
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.deps.json
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.runtimeconfig.json
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.pdb
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Dapper.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Npgsql.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Data.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.DTOs.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Model.dll
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Data.pdb
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.DTOs.pdb
+C:\PA\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.AssemblyReference.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.GeneratedMSBuildEditorConfig.editorconfig
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.AssemblyInfoInputs.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.AssemblyInfo.cs
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.CoreCompileInputs.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.MvcApplicationPartsAssemblyInfo.cs
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.MvcApplicationPartsAssemblyInfo.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.sourcelink.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\scopedcss\bundle\PA-BACKEND.styles.css
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.development.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\swae.build.ex.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.Up2Date
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.dll
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\refint\PA-BACKEND.dll
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.pdb
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.genruntimeconfig.cache
+C:\PA\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\ref\PA-BACKEND.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\appsettings.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.staticwebassets.endpoints.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.exe
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.deps.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.runtimeconfig.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Dapper.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Data.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.DTOs.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Model.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Data.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.DTOs.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\bin\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.AssemblyReference.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.AssemblyInfoInputs.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.AssemblyInfo.cs
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.CoreCompileInputs.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.sourcelink.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\scopedcss\bundle\PA-BACKEND.styles.css
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.csproj.Up2Date
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\refint\PA-BACKEND.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\PA-BACKEND.genruntimeconfig.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND\obj\Debug\net8.0\ref\PA-BACKEND.dll

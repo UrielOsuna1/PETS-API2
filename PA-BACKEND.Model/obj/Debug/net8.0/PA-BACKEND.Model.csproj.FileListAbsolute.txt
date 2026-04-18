@@ -1,0 +1,24 @@
+C:\PA\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.deps.json
+C:\PA\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.dll
+C:\PA\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.AssemblyInfoInputs.cache
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.AssemblyInfo.cs
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.csproj.CoreCompileInputs.cache
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.sourcelink.json
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.dll
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\refint\PA-BACKEND.Model.dll
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\PA\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\ref\PA-BACKEND.Model.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.deps.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\bin\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.AssemblyInfoInputs.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.AssemblyInfo.cs
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.csproj.CoreCompileInputs.cache
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.sourcelink.json
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\refint\PA-BACKEND.Model.dll
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\PA-BACKEND.Model.pdb
+C:\Users\Jesus\OneDrive\Desktop\Aplicaciones para los logs\back\PA-BACKEND\PA-BACKEND.Model\obj\Debug\net8.0\ref\PA-BACKEND.Model.dll

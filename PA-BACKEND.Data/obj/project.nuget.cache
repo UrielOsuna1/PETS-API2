@@ -1,0 +1,65 @@
+{
+  "version": 2,
+  "dgSpecHash": "z1N8p/Xl4qc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jesus\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.8\\microsoft.aspnetcore.metadata.8.0.8.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.0\\microsoft.identitymodel.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.0\\microsoft.identitymodel.jsonwebtokens.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.0\\microsoft.identitymodel.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.0\\microsoft.identitymodel.tokens.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\npgsql\\8.0.0\\npgsql.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.0\\system.identitymodel.tokens.jwt.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jesus\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "PA-BACKEND.Data depende de Microsoft.Extensions.Configuration (>= 8.0.8), pero no se encontró Microsoft.Extensions.Configuration 8.0.8. Microsoft.Extensions.Configuration 9.0.0 se resolvió en su lugar.",
+      "projectPath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "libraryId": "Microsoft.Extensions.Configuration",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "El paquete \"Npgsql\" 8.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-x9vc-6hfv-hg8c",
+      "projectPath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "libraryId": "Npgsql",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "El paquete \"System.IdentityModel.Tokens.Jwt\" 7.0.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "projectPath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Jesus\\OneDrive\\Desktop\\Aplicaciones para los logs\\back\\PA-BACKEND\\PA-BACKEND.Data\\PA-BACKEND.Data.csproj",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
