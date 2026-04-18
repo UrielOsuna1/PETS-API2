@@ -1,6 +1,7 @@
 using Npgsql;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 // dtos
 using PA_BACKEND.DTOs.AuditLog;
 using PA_BACKEND.DTOs.Common;
@@ -17,11 +18,13 @@ namespace PA_BACKEND.Data.Repositories
     {
         private readonly PostgreSQLConfiguration _configuration;
         private readonly IConfiguration _appConfiguration;
+        private readonly ILogger<AuditLogRepository> _logger;
 
-        public AuditLogRepository(PostgreSQLConfiguration configuration, IConfiguration appConfiguration)
+        public AuditLogRepository(PostgreSQLConfiguration configuration, IConfiguration appConfiguration, ILogger<AuditLogRepository> logger)
         {
             _configuration = configuration;
             _appConfiguration = appConfiguration;
+            _logger = logger;
         }
 
         protected NpgsqlConnection GetConnection()
@@ -37,19 +40,38 @@ namespace PA_BACKEND.Data.Repositories
         #region insertar log de auditoría
         public async Task<ResponseAuditLogDTO> InsertAuditLogAsync(InsertAuditLogDTO auditLogDto)
         {
+            _logger.LogInformation("AUDIT_LOG: Iniciando inserción de log de auditoría");
+            
             if (auditLogDto == null)
+            {
+                _logger.LogError("AUDIT_LOG: auditLogDto es null");
                 throw new ArgumentNullException(nameof(auditLogDto));
+            }
 
             if (string.IsNullOrWhiteSpace(auditLogDto.Action))
+            {
+                _logger.LogError("AUDIT_LOG: Action es requerido y está vacío");
                 throw new ArgumentException("Acción requerida");
+            }
+
+            _logger.LogInformation("AUDIT_LOG: Datos del log - UserId: {UserId}, Action: {Action}, EntityType: {EntityType}, EntityId: {EntityId}, IpAddress: {IpAddress}", 
+                auditLogDto.UserId, auditLogDto.Action, auditLogDto.EntityType, auditLogDto.EntityId, auditLogDto.IpAddress);
 
             try
             {
+                _logger.LogInformation("AUDIT_LOG: Obteniendo conexión a base de datos");
                 using var connection = GetConnection();
+                
+                var connectionString = _configuration.GetConnection().ConnectionString;
+                _logger.LogInformation("AUDIT_LOG: ConnectionString (parcial): {ConnectionString}", 
+                    connectionString.Substring(0, Math.Min(50, connectionString.Length)) + "...");
+                
                 await connection.OpenAsync();
+                _logger.LogInformation("AUDIT_LOG: Conexión a BD abierta exitosamente");
 
                 // la función retorna un tipo compuesto audit_logs
                 // leemos como dynamic y mapeamos manualmente para manejar el tipo inet
+                _logger.LogInformation("AUDIT_LOG: Ejecutando función insert_audit_log");
                 var row = await connection.QuerySingleAsync<dynamic>(
                     "SELECT * FROM insert_audit_log(@p_user_id, @p_action, @p_entity_type, @p_entity_id, @p_ip_address::inet)",
                     new
@@ -62,6 +84,8 @@ namespace PA_BACKEND.Data.Repositories
                     }
                 );
 
+                _logger.LogInformation("AUDIT_LOG: Función ejecutada exitosamente, mapeando resultado");
+                
                 // mapear manualmente el resultado
                 var result = new ResponseAuditLogDTO
                 {
@@ -74,12 +98,18 @@ namespace PA_BACKEND.Data.Repositories
                     CreatedAt = (DateTime)row.created_at
                 };
 
+                _logger.LogInformation("AUDIT_LOG: Log de auditoría insertado exitosamente - Id: {Id}", result.Id);
                 return result;
             }
-            catch
+            catch (PostgresException ex)
             {
-                // en caso de error, no lanzamos excepción para no interrumpir el flujo principal
-                // solo retornamos null para indicar fallo silencioso
+                _logger.LogError(ex, "AUDIT_LOG: Error de PostgreSQL al insertar log - SQLState: {SQLState}, Message: {Message}", 
+                    ex.SqlState, ex.Message);
+                return null!;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "AUDIT_LOG: Error general al insertar log de auditoría");
                 return null!;
             }
         }
