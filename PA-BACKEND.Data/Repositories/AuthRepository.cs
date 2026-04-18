@@ -49,8 +49,7 @@ namespace PA_BACKEND.Data.Repositories
             var ip = context.Request.Headers["X-Forwarded-For"].FirstOrDefault();
             if (!string.IsNullOrEmpty(ip))
             {
-                // X-Forwarded-For puede contener múltiples IPs separadas por comas
-                // La primera IP es la del cliente original
+                // Tomar solo la primera IP de la lista separada por comas
                 ip = ip.Split(',')[0].Trim();
             }
             else
@@ -58,7 +57,7 @@ namespace PA_BACKEND.Data.Repositories
                 ip = context.Connection.RemoteIpAddress?.ToString();
             }
             
-            // mapear IPv6 localhost a IPv4 para consistencia
+            // Si es IPv6 localhost, convertir a IPv4
             if (ip == "::1" || ip == "::1/128" || ip == "0:0:0:0:0:0:0:1")
             {
                 ip = "127.0.0.1";
