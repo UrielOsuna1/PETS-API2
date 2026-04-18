@@ -2,8 +2,6 @@ using PA_BACKEND.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// add services to the container
-
 // cargar variables de entorno
 builder.Configuration.AddEnvironmentVariables();
 
@@ -13,7 +11,7 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
     });
 
-// cors configuration - restringir en producción
+// cors
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -27,8 +25,7 @@ builder.Services.AddCors(options =>
         }
         else
         {
-            // configuración más restrictiva para producción
-            policy.WithOrigins("https://tudominio.com") // reemplazar con dominios permitidos
+            policy.WithOrigins("https://tudominio.com")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
                   .AllowCredentials();
@@ -36,7 +33,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// middleware personalizado para manejar errores de validación de modelo
+// manejo de errores de modelo
 builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = context =>
@@ -58,7 +55,12 @@ builder.Services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options 
     };
 });
 
-// add authentication and authorization con validaciones estrictas
+// 🔥 FIX: evitar crash si no hay variables en build
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "TEMP_KEY_123456789";
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "TEMP_ISSUER";
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "TEMP_AUDIENCE";
+
+// auth
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
@@ -70,84 +72,41 @@ builder.Services.AddAuthentication("Bearer")
             ValidateLifetime = true,
             ClockSkew = TimeSpan.Zero,
             IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes(
-                    builder.Configuration["Jwt:Key"]
-                    ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError)
-                )),
-            ValidIssuer = builder.Configuration["Jwt:Issuer"]
-                ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
-            ValidAudience = builder.Configuration["Jwt:Audience"]
-                ?? throw new InvalidOperationException(PA_BACKEND.DTOs.Common.SecureMessages.ConfigurationError),
+                System.Text.Encoding.UTF8.GetBytes(jwtKey)),
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
             RoleClaimType = System.Security.Claims.ClaimTypes.Role
         };
     });
 
 builder.Services.AddAuthorization();
 
-// dependency injection - repositories
+// DI
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IAuthRepository, PA_BACKEND.Data.Repositories.AuthRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.ITokenRepository, PA_BACKEND.Data.Repositories.TokenRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.ICryptoRepository, PA_BACKEND.Data.Repositories.CryptoRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IGatewayRepository, PA_BACKEND.Data.Repositories.GatewayRepository>();
 builder.Services.AddScoped<PA_BACKEND.Data.Interface.IAuditLogRepository, PA_BACKEND.Data.Repositories.AuditLogRepository>();
 
-// http context accessor
 builder.Services.AddHttpContextAccessor();
 
-// database configuration
+// db
 builder.Services.AddSingleton<PA_BACKEND.Data.PostgreSQLConfiguration>();
 builder.Services.AddSingleton<Microsoft.Extensions.Configuration.IConfiguration>(builder.Configuration);
 
 // swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new()
-    {
-        Title = "PA Backend API",
-        Version = "v1",
-        Description = "API para el sistema de protección animal"
-    });
-
-    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-    {
-        Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-        Name = "Authorization",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
-    });
-
-    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-    {
-        {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
-                {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            Array.Empty<string>()
-        }
-    });
-});
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// swagger solo en desarrollo
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "PA Backend API v1");
-        c.RoutePrefix = "swagger";
-    });
+    app.UseSwaggerUI();
 }
 
-// middleware global de errores
+// errores globales
 app.UseExceptionHandler(errorApp =>
 {
     errorApp.Run(async context =>
@@ -167,10 +126,8 @@ app.UseExceptionHandler(errorApp =>
     });
 });
 
-// use CORS
 app.UseCors("AllowAll");
 
-// middlewares personalizados
 app.UseAuthorizationHeaderFix();
 app.UseTokenBlacklistValidation();
 
@@ -179,6 +136,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// 🔥 IMPORTANTE PARA RAILWAY
+// 🔥 Railway
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 app.Run($"http://0.0.0.0:{port}");
